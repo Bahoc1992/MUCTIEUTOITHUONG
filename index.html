@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mục Tiêu Tối Thượng Trong Ngày</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap');
+        body { font-family: 'Montserrat', sans-serif; background: #0a0a0a; color: #e5e7eb; }
+        
+        .app-icon-3d {
+            background: linear-gradient(180deg, #fceabb 0%, #d4af37 100%);
+            color: #4a3500;
+            padding: 1.5rem 3rem;
+            border-radius: 2rem;
+            box-shadow: 0 8px 0 #9c8026, 0 15px 20px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+            font-weight: 900;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        /* Hiệu ứng viền sáng chạy quanh */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            border-color: #d4af37;
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .center-image {
+            filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.4));
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-12">
+
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col items-center mb-16 mt-8">
+            <div class="app-icon-3d text-xl md:text-3xl tracking-widest text-center">
+                Mục Tiêu Tối Thượng Trong Ngày
+            </div>
+            <p class="mt-6 text-red-500 font-bold text-lg md:text-xl animate-pulse tracking-wide italic">
+                "Mau chóng về Nhà, không kịp rồi!"
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div id="left-goals" class="space-y-6"></div>
+
+            <div class="flex justify-center">
+                <img src="https://lh3.googleusercontent.com/d/1akUspq5E7fqA-uuJIMxDemm3Ji4iMkX2" 
+                     alt="[Hình ảnh luân xa]" class="w-80 center-image">
+            </div>
+
+            <div id="right-goals" class="space-y-6"></div>
+        </div>
+    </div>
+
+    <script>
+        const goals = [
+            { title: "Quán Âm 3h", icon: "volume-2", note: "bổ sung năng lượng trục sống lưng, xóa nghiệp để không bị nghiệp phủ" },
+            { title: "Mật Niệm 24h", icon: "brain", note: "để nghiệp không xâm nhập, đầu óc không dính mắc" },
+            { title: "Giữ chặt Ngũ Giới", icon: "shield-check", note: "dính ngũ giới sẽ bị luân hồi" },
+            { title: "Giữ Tinh Khí Thần", icon: "sprout", note: "cốt lõi của trục sống lưng" },
+            { title: "Thông 12 kinh, 3 chính kinh", icon: "waves", note: "" },
+            { title: "Giải tắc nghẽn cơ, huyệt", icon: "unlock", note: "" },
+            { title: "Cân bằng âm dương", icon: "scale", note: "" },
+            { title: "Cân bằng ngũ tạng", icon: "heart-pulse", note: "" },
+            { title: "Thu nhập thụ động", icon: "trending-up", note: "xây dựng lộ trình để tiến tới, 1 ngách chuyên biệt, ít hao tổn tinh thần" }
+        ];
+
+        const left = document.getElementById('left-goals');
+        const right = document.getElementById('right-goals');
+
+        goals.forEach((g, i) => {
+            const card = `
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="flex items-center gap-4 mb-3">
+                        <i data-lucide="${g.icon}" class="text-[#d4af37] w-8 h-8"></i>
+                        <h2 class="text-2xl font-bold text-white">${(i+1).toString().padStart(2, '0')}</h2>
+                    </div>
+                    <p class="text-lg font-semibold text-[#d4af37]">${g.title}</p>
+                    ${g.note ? `<p class="text-xs text-gray-400 mt-3 italic leading-relaxed">"${g.note}"</p>` : ''}
+                </div>
+            `;
+            i < 4 ? left.innerHTML += card : right.innerHTML += card;
+        });
+
+        // Khởi tạo icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
