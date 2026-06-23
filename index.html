@@ -24,6 +24,7 @@
       font-family: 'Be Vietnam Pro', 'Segoe UI', sans-serif;
       padding: 10px;
       margin: 0;
+      transition: padding 0.3s ease;
     }
 
     .app-container {
@@ -38,6 +39,7 @@
       align-items: center;
       border: 2px solid #d4b68a;
       position: relative;
+      transition: all 0.3s ease;
     }
 
     /* Nút danh sách bài hát */
@@ -99,9 +101,9 @@
       border-radius: 15px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.4);
       z-index: 99;
-      width: 300px;
-      max-width: 80vw;
-      max-height: 400px;
+      width: 350px;
+      max-width: 85vw;
+      max-height: 450px;
       display: none;
       flex-direction: column;
       overflow: hidden;
@@ -122,6 +124,7 @@
       justify-content: space-between;
       align-items: center;
       font-family: 'Be Vietnam Pro', sans-serif;
+      flex-shrink: 0;
     }
 
     .song-list-header .sort-info {
@@ -134,6 +137,7 @@
     .song-list-search {
       padding: 8px 12px;
       border-bottom: 1px solid #e0d0b8;
+      flex-shrink: 0;
     }
 
     .song-list-search input {
@@ -154,8 +158,9 @@
 
     .song-list-items {
       overflow-y: auto;
-      max-height: 300px;
+      max-height: 350px;
       -webkit-overflow-scrolling: touch;
+      flex: 1;
     }
 
     .song-list-item {
@@ -168,7 +173,6 @@
       gap: 10px;
       font-size: 0.85rem;
       color: #3a2c18;
-      font-family: 'Noto Serif', 'Georgia', serif;
     }
 
     .song-list-item:hover {
@@ -180,7 +184,7 @@
       font-weight: 700;
     }
 
-    .song-list-item .song-number {
+    .song-list-item .song-order {
       background: #6b4c3b;
       color: white;
       min-width: 28px;
@@ -192,6 +196,7 @@
       font-size: 0.75rem;
       font-weight: 700;
       font-family: 'Be Vietnam Pro', sans-serif;
+      flex-shrink: 0;
     }
 
     .song-list-item .song-info {
@@ -204,6 +209,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-weight: 500;
+      font-family: 'Noto Serif', 'Georgia', serif;
     }
 
     .song-list-item .song-preview {
@@ -216,6 +222,23 @@
       font-family: 'Be Vietnam Pro', sans-serif;
     }
 
+    .song-list-item .song-page-number {
+      background: #efe0cc;
+      color: #3a2c18;
+      min-width: 32px;
+      height: 28px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      flex-shrink: 0;
+      padding: 0 8px;
+      white-space: nowrap;
+    }
+
     .song-list-empty {
       padding: 20px;
       text-align: center;
@@ -224,7 +247,6 @@
       font-size: 0.85rem;
     }
 
-    /* Overlay khi dropdown mở */
     .song-list-overlay {
       display: none;
       position: fixed;
@@ -239,29 +261,34 @@
       display: block;
     }
 
-    h1 {
+    /* === CÁC PHẦN TỬ ẨN KHI FULLSCREEN === */
+    .app-header {
+      width: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .app-header h1 {
       font-size: clamp(1.5rem, 4vw, 2.4rem);
       font-weight: 600;
       color: #4b2e1a;
-      text-align: center;
       margin-bottom: 15px;
       letter-spacing: 1px;
       text-shadow: 2px 2px 0 rgba(230, 200, 140, 0.4);
       font-family: 'Noto Serif', 'Georgia', serif;
       border-bottom: 2px dashed #c8a87c;
       padding-bottom: 8px;
-      width: 100%;
       text-transform: uppercase;
+      transition: all 0.3s ease;
     }
 
-    .subtitle {
-      text-align: center;
-      margin-bottom: 5px;
+    .app-header .subtitle {
       color: #5e4328;
-      width: 100%;
       font-size: clamp(0.75rem, 2vw, 1rem);
       padding: 0 10px;
       font-family: 'Be Vietnam Pro', sans-serif;
+      margin-bottom: 5px;
+      transition: all 0.3s ease;
     }
 
     .upload-area {
@@ -276,6 +303,7 @@
       border-radius: 50px;
       box-shadow: inset 0 4px 10px rgba(0,0,0,0.1), 0 8px 15px rgba(0,0,0,0.2);
       width: 100%;
+      transition: all 0.3s ease;
     }
 
     .file-label {
@@ -422,6 +450,7 @@
       align-items: center;
       width: 100%;
       margin-top: 5px;
+      transition: all 0.3s ease;
     }
 
     .book {
@@ -436,7 +465,7 @@
       max-height: 65vh;
       background: #fef7e6;
       position: relative;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
       margin-bottom: 8px;
     }
 
@@ -447,6 +476,7 @@
       margin-right: 10px;
       box-shadow: inset -3px 0 8px rgba(0,0,0,0.4), inset 2px 0 5px rgba(255,255,200,0.5);
       flex-shrink: 0;
+      transition: all 0.3s ease;
     }
 
     .page-container {
@@ -461,6 +491,7 @@
       position: relative;
       border-left: 2px solid #e7cfaa;
       overflow: hidden;
+      transition: all 0.3s ease;
     }
 
     .song-page {
@@ -481,7 +512,7 @@
       overflow-x: hidden;
       background: rgba(255,250,240,0.7);
       border-radius: 6px;
-      transition: all 0.3s;
+      transition: all 0.3s ease;
       height: 100%;
       -webkit-overflow-scrolling: touch;
       font-feature-settings: "kern" 1;
@@ -563,8 +594,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 15px;
       margin-top: 10px;
+      transition: all 0.3s ease;
     }
 
     .nav-btn {
@@ -598,6 +630,35 @@
       box-shadow: 0 3px 0 #6b4f32;
       cursor: not-allowed;
       pointer-events: none;
+    }
+
+    /* Nút phóng to - nằm trong navigation */
+    .zoom-btn {
+      background: #5a8a6a;
+      border: none;
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      width: clamp(40px, 8vw, 55px);
+      height: clamp(40px, 8vw, 55px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 5px 0 #3d5a45, 0 6px 12px rgba(0,0,0,0.25);
+      transition: all 0.1s ease;
+      font-weight: bold;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .zoom-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #3d5a45, 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .zoom-btn:hover {
+      background: #6a9a7a;
     }
 
     .page-indicator {
@@ -680,6 +741,78 @@
       to { opacity: 0; }
     }
 
+    /* ===== CHẾ ĐỘ FULL MÀN HÌNH CHO KHUNG SÁCH ===== */
+    .book-wrapper.fullscreen-book {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .book-wrapper.fullscreen-book .book {
+      max-width: 95%;
+      width: 95%;
+      min-height: 70vh;
+      max-height: 85vh;
+      border-radius: 15px 25px 25px 15px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), inset 0 0 0 3px #dbbc87, inset 0 0 0 6px #f6ecd9;
+    }
+
+    .book-wrapper.fullscreen-book .song-page {
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      line-height: 2.2;
+    }
+
+    .book-wrapper.fullscreen-book .song-page .song-title {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    }
+
+    .book-wrapper.fullscreen-book .zoom-btn {
+      background: #c45a3a;
+      box-shadow: 0 5px 0 #8a3a2a, 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .book-wrapper.fullscreen-book .zoom-btn:hover {
+      background: #d45a4a;
+    }
+
+    .book-wrapper.fullscreen-book .nav-btn {
+      box-shadow: 0 5px 0 #8b6d4b, 0 6px 12px rgba(0,0,0,0.3);
+    }
+
+    .book-wrapper.fullscreen-book .status-text,
+    .book-wrapper.fullscreen-book .debug-info {
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .book-wrapper.fullscreen-book .debug-info {
+      background: rgba(0, 0, 0, 0.3);
+      color: #ddd;
+    }
+
+    /* Ẩn header và upload area khi fullscreen */
+    .app-container.fullscreen-mode .app-header,
+    .app-container.fullscreen-mode .upload-area,
+    .app-container.fullscreen-mode .song-list-toggle,
+    .app-container.fullscreen-mode .song-list-dropdown {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
     /* Mobile-specific styles */
     @media (max-width: 600px) {
       .app-container {
@@ -698,8 +831,25 @@
       .song-list-dropdown {
         top: 55px;
         left: 10px;
-        width: 260px;
-        max-height: 350px;
+        width: 280px;
+        max-height: 380px;
+      }
+
+      .song-list-item {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+
+      .song-list-item .song-order {
+        min-width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+      }
+
+      .song-list-item .song-page-number {
+        min-width: 28px;
+        height: 24px;
+        font-size: 0.7rem;
       }
 
       .upload-area {
@@ -754,14 +904,14 @@
       }
 
       .page-navigation {
-        gap: 15px;
+        gap: 10px;
         margin-top: 8px;
       }
 
-      .nav-btn {
-        width: 42px;
-        height: 42px;
-        font-size: 1.6rem;
+      .nav-btn, .zoom-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
       }
 
       .toast {
@@ -769,6 +919,11 @@
         right: 10px;
         left: 10px;
         padding: 10px 15px;
+      }
+
+      .book-wrapper.fullscreen-book .book {
+        min-height: 60vh;
+        max-height: 80vh;
       }
     }
 
@@ -799,14 +954,14 @@
       }
 
       .song-list-dropdown {
-        width: 230px;
-        max-height: 300px;
+        width: 250px;
+        max-height: 320px;
       }
     }
   </style>
 </head>
 <body>
-<div class="app-container">
+<div class="app-container" id="appContainer">
   <!-- Nút danh sách bài hát -->
   <button class="song-list-toggle" id="songListToggle" title="Danh sách bài hát">
     ☰
@@ -826,15 +981,17 @@
       <div class="song-list-empty">Chưa có bài hát nào</div>
     </div>
   </div>
-
-  <!-- Overlay -->
   <div class="song-list-overlay" id="songListOverlay"></div>
 
-  <h1>📖 DANH SÁCH BÀI HÁT</h1>
-  <p class="subtitle">
-    Tải file Word (.docx) – mỗi bài hát phân cách bằng <strong>Page Break (Ctrl+Enter)</strong>
-  </p>
+  <!-- Header -->
+  <div class="app-header">
+    <h1>📖 DANH SÁCH BÀI HÁT</h1>
+    <p class="subtitle">
+      Tải file Word (.docx) – mỗi bài hát phân cách bằng <strong>Page Break (Ctrl+Enter)</strong>
+    </p>
+  </div>
 
+  <!-- Upload Area -->
   <div class="upload-area">
     <label for="fileUpload" class="file-label" id="fileLabel">
       📄 Chọn file Word
@@ -846,7 +1003,8 @@
     <button id="btnDownload" class="btn-download">💾 Lưu file</button>
   </div>
 
-  <div class="book-wrapper">
+  <!-- Book -->
+  <div class="book-wrapper" id="bookWrapper">
     <div class="book">
       <div class="book-spine"></div>
       <div class="page-container">
@@ -860,6 +1018,7 @@
           <button id="prevBtn" class="nav-btn" disabled>←</button>
           <span id="pageIndicator" class="page-indicator">0 / 0</span>
           <button id="nextBtn" class="nav-btn" disabled>→</button>
+          <button id="zoomBtn" class="zoom-btn" title="Phóng to">⛶</button>
         </div>
       </div>
     </div>
@@ -877,6 +1036,7 @@
     let editingPageIndex = 0;
     let currentFileName = '';
     let originalFileName = '';
+    let isFullscreen = false;
 
     // ---- LOCAL STORAGE KEYS ----
     const STORAGE_KEYS = {
@@ -888,6 +1048,8 @@
     };
 
     // DOM elements
+    const appContainer = document.getElementById('appContainer');
+    const bookWrapper = document.getElementById('bookWrapper');
     const fileInput = document.getElementById('fileUpload');
     const fileNameDisplay = document.getElementById('fileNameDisplay');
     const fileLabel = document.getElementById('fileLabel');
@@ -901,6 +1063,7 @@
     const btnSave = document.getElementById('btnSave');
     const btnDownload = document.getElementById('btnDownload');
     const editHint = document.getElementById('editHint');
+    const zoomBtn = document.getElementById('zoomBtn');
 
     // Song list elements
     const songListToggle = document.getElementById('songListToggle');
@@ -910,23 +1073,53 @@
     const songSearchInput = document.getElementById('songSearchInput');
     const songCountBadge = document.getElementById('songCountBadge');
 
-    // ---- Lấy tiêu đề bài hát (dòng đầu tiên) ----
+    // ---- PHÓNG TO / THU NHỎ KHUNG SÁCH ----
+    function toggleFullscreen() {
+      isFullscreen = !isFullscreen;
+      
+      if (isFullscreen) {
+        // Phóng to khung sách
+        bookWrapper.classList.add('fullscreen-book');
+        appContainer.classList.add('fullscreen-mode');
+        zoomBtn.innerHTML = '✕';
+        zoomBtn.title = 'Thu nhỏ';
+        document.body.style.overflow = 'hidden';
+        
+        setTimeout(() => {
+          songDisplayDiv.scrollTop = 0;
+        }, 100);
+        
+        showToast('📖 Đã phóng to - Nhấn ✕ để thu nhỏ');
+      } else {
+        // Thu nhỏ
+        bookWrapper.classList.remove('fullscreen-book');
+        appContainer.classList.remove('fullscreen-mode');
+        zoomBtn.innerHTML = '⛶';
+        zoomBtn.title = 'Phóng to';
+        document.body.style.overflow = 'auto';
+        
+        setTimeout(() => {
+          songDisplayDiv.scrollTop = 0;
+        }, 150);
+        
+        showToast('🔍 Đã thu nhỏ');
+      }
+    }
+
+    // ---- Lấy tiêu đề bài hát ----
     function getSongTitle(songContent) {
       if (!songContent) return 'Không có tiêu đề';
       const lines = songContent.split('\n');
       if (lines.length > 0 && lines[0].trim().length > 0 && lines[0].trim().length < 100) {
         return lines[0].trim();
       }
-      // Nếu dòng đầu quá dài, lấy 50 ký tự đầu
       const firstLine = songContent.split('\n')[0].trim();
       return firstLine.substring(0, 50) + (firstLine.length > 50 ? '...' : '');
     }
 
-    // ---- Lấy preview (2 dòng đầu) ----
     function getSongPreview(songContent, maxLength = 40) {
       if (!songContent) return '';
       const lines = songContent.split('\n');
-      // Bỏ dòng đầu (tiêu đề), lấy dòng thứ 2
       const previewLine = lines.length > 1 ? lines[1].trim() : '';
       if (previewLine.length > maxLength) {
         return previewLine.substring(0, maxLength) + '...';
@@ -934,17 +1127,14 @@
       return previewLine;
     }
 
-    // ---- Sắp xếp bài hát theo Alphabet ----
     function getSortedSongs(filterText = '') {
-      // Tạo mảng với index và title
       let songList = songs.map((song, index) => ({
-        index: index,
+        originalIndex: index,
         title: getSongTitle(song),
         preview: getSongPreview(song),
         content: song
       }));
 
-      // Lọc theo text tìm kiếm
       if (filterText.trim()) {
         const searchLower = filterText.toLowerCase().trim();
         songList = songList.filter(song => 
@@ -953,7 +1143,6 @@
         );
       }
 
-      // Sắp xếp theo Alphabet tiếng Việt
       songList.sort((a, b) => {
         return a.title.localeCompare(b.title, 'vi', { sensitivity: 'base' });
       });
@@ -961,7 +1150,6 @@
       return songList;
     }
 
-    // ---- Render danh sách bài hát ----
     function renderSongList(filterText = '') {
       const sortedSongs = getSortedSongs(filterText);
 
@@ -970,20 +1158,22 @@
         return;
       }
 
-      songListItems.innerHTML = sortedSongs.map(song => {
-        const isActive = song.index === currentIndex;
+      songListItems.innerHTML = sortedSongs.map((song, displayIndex) => {
+        const isActive = song.originalIndex === currentIndex;
+        const pageNumber = song.originalIndex + 1;
+        
         return `
-          <div class="song-list-item ${isActive ? 'active' : ''}" data-index="${song.index}">
-            <span class="song-number">${song.index + 1}</span>
+          <div class="song-list-item ${isActive ? 'active' : ''}" data-index="${song.originalIndex}">
+            <span class="song-order">${displayIndex + 1}</span>
             <div class="song-info">
               <div class="song-name">${escapeHtml(song.title)}</div>
               ${song.preview ? `<div class="song-preview">${escapeHtml(song.preview)}</div>` : ''}
             </div>
+            <span class="song-page-number">Tr.${pageNumber}</span>
           </div>
         `;
       }).join('');
 
-      // Thêm sự kiện click cho từng item
       songListItems.querySelectorAll('.song-list-item').forEach(item => {
         item.addEventListener('click', function() {
           const index = parseInt(this.dataset.index);
@@ -995,10 +1185,8 @@
       });
     }
 
-    // ---- Mở/đóng danh sách ----
     function toggleSongList() {
-      const isOpen = songListDropdown.classList.contains('show');
-      if (isOpen) {
+      if (songListDropdown.classList.contains('show')) {
         closeSongList();
       } else {
         openSongList();
@@ -1011,7 +1199,6 @@
       songSearchInput.value = '';
       renderSongList();
       songSearchInput.focus();
-      // Cập nhật badge
       updateSongCountBadge();
     }
 
@@ -1029,7 +1216,6 @@
       }
     }
 
-    // ---- HÀM LƯU VÀO LOCAL STORAGE ----
     function saveToLocalStorage() {
       try {
         localStorage.setItem(STORAGE_KEYS.SONGS, JSON.stringify(songs));
@@ -1039,13 +1225,9 @@
         localStorage.setItem(STORAGE_KEYS.LAST_UPDATED, new Date().toISOString());
       } catch (error) {
         console.error('❌ Lỗi lưu localStorage:', error);
-        if (error.name === 'QuotaExceededError') {
-          showToast('⚠️ Bộ nhớ local đã đầy');
-        }
       }
     }
 
-    // ---- HÀM TẢI TỪ LOCAL STORAGE ----
     function loadFromLocalStorage() {
       try {
         const savedSongs = localStorage.getItem(STORAGE_KEYS.SONGS);
@@ -1062,21 +1244,16 @@
         }
         return false;
       } catch (error) {
-        console.error('❌ Lỗi tải localStorage:', error);
         return false;
       }
     }
 
-    // ---- HÀM XÓA LOCAL STORAGE ----
     function clearLocalStorage() {
       try {
         Object.values(STORAGE_KEYS).forEach(key => localStorage.removeItem(key));
-      } catch (error) {
-        console.error('❌ Lỗi xóa localStorage:', error);
-      }
+      } catch (error) {}
     }
 
-    // ---- Hàm escape HTML ----
     function escapeHtml(text) {
       return text
         .replace(/&/g, '&amp;')
@@ -1086,7 +1263,6 @@
         .replace(/'/g, '&#039;');
     }
 
-    // ---- Hiển thị toast thông báo ----
     function showToast(message, duration = 3000) {
       const oldToast = document.querySelector('.toast');
       if (oldToast) oldToast.remove();
@@ -1101,14 +1277,12 @@
       }, duration);
     }
 
-    // ---- Cuộn về đầu trang ----
     function scrollToTop() {
       setTimeout(() => {
         songDisplayDiv.scrollTop = 0;
       }, 50);
     }
 
-    // ---- Chuẩn hóa text ----
     function normalizePageText(text) {
       let lines = text.split('\n');
       lines = lines.map(line => line.trim());
@@ -1134,7 +1308,6 @@
       return cleanedLines.join('\n');
     }
 
-    // ---- HÀM CHÍNH: Trích xuất text từ document.xml với page break ----
     function extractTextWithPageBreaks(xmlString) {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
@@ -1217,7 +1390,6 @@
       return { songs: processedSongs, pageBreakCount };
     }
 
-    // ---- Tạo nội dung file docx ----
     async function createDocxBlob() {
       let xmlContent = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
@@ -1298,7 +1470,6 @@
       return blob;
     }
 
-    // ---- TẢI XUỐNG FILE DOCX ----
     async function downloadDocxFile() {
       if (songs.length === 0) {
         showToast('⚠️ Không có bài hát nào để lưu');
@@ -1339,29 +1510,18 @@
       } catch (error) {
         console.error('❌ Lỗi:', error);
         showToast('❌ Lỗi: ' + error.message);
-        statusMessage.textContent = '❌ Lỗi tạo file';
       } finally {
         btnDownload.disabled = false;
         btnDownload.textContent = '💾 Lưu file';
-        
-        setTimeout(() => {
-          if (statusMessage.textContent.includes('Đã lưu')) statusMessage.textContent = '';
-        }, 4000);
+        setTimeout(() => { if (statusMessage.textContent.includes('Đã lưu')) statusMessage.textContent = ''; }, 4000);
       }
     }
 
-    // ---- Escape XML ----
     function escapeXml(text) {
       if (!text) return '';
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&apos;');
+      return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
     }
 
-    // ---- RESET TOÀN BỘ ----
     function resetToInitialState() {
       songs = [];
       currentIndex = 0;
@@ -1395,7 +1555,6 @@
       clearLocalStorage();
     }
 
-    // ---- Cập nhật tên file ----
     function updateFileNameDisplay(fileName) {
       if (fileName) {
         currentFileName = fileName;
@@ -1414,7 +1573,6 @@
       }
     }
 
-    // ---- Hiển thị bài hát (chế độ xem) ----
     function renderSongView(index) {
       if (!songs.length || index < 0 || index >= songs.length) {
         songDisplayDiv.innerHTML = `<div class="empty-message">🎼 Không có bài hát nào</div>`;
@@ -1449,7 +1607,6 @@
       updateNavigationState();
     }
 
-    // ---- Hiển thị bài hát (chế độ chỉnh sửa) ----
     function renderSongEdit(index) {
       if (!songs.length || index < 0 || index >= songs.length) {
         songDisplayDiv.innerHTML = `<div class="empty-message">🎼 Không có bài hát nào</div>`;
@@ -1475,7 +1632,6 @@
       }
     }
 
-    // ---- Xử lý textarea ----
     function setupEditListeners() {
       const textarea = document.getElementById('editTextarea');
       if (!textarea) return;
@@ -1512,7 +1668,6 @@
       });
     }
 
-    // ---- Bắt đầu chỉnh sửa ----
     function startEdit() {
       if (songs.length === 0) {
         showToast('⚠️ Chưa có bài hát nào');
@@ -1537,7 +1692,6 @@
       statusMessage.textContent = '📝 Ctrl+Enter: ngắt trang | Ctrl+S: lưu | Esc: hủy';
     }
 
-    // ---- Lưu thay đổi ----
     function saveEdit() {
       if (!isEditing) return;
       
@@ -1570,7 +1724,6 @@
       setTimeout(() => { statusMessage.textContent = ''; }, 3000);
     }
 
-    // ---- Hủy chỉnh sửa ----
     function cancelEdit() {
       if (!isEditing) return;
       exitEditMode();
@@ -1580,7 +1733,6 @@
       setTimeout(() => { statusMessage.textContent = ''; }, 2000);
     }
 
-    // ---- Thoát chế độ chỉnh sửa ----
     function exitEditMode() {
       isEditing = false;
       btnEdit.classList.remove('active');
@@ -1591,7 +1743,6 @@
       updateNavigationState();
     }
 
-    // ---- Cập nhật nút điều hướng ----
     function updateNavigationState() {
       const total = songs.length;
       
@@ -1617,7 +1768,6 @@
       pageIndicator.textContent = `${currentIndex + 1} / ${total}`;
     }
 
-    // ---- Chuyển trang ----
     function goToPage(index) {
       if (isEditing) {
         if (confirm('Lưu thay đổi trước khi chuyển trang?')) {
@@ -1651,7 +1801,6 @@
       if (songs.length && currentIndex < songs.length - 1 && !isEditing) goToPage(currentIndex + 1);
     }
 
-    // ---- Xử lý file MỚI ----
     async function processNewFile(file) {
       try {
         resetToInitialState();
@@ -1684,7 +1833,6 @@
       }
     }
 
-    // ---- Xử lý chọn file ----
     function handleFileSelect(file) {
       if (!file) return;
       if (!file.name.toLowerCase().endsWith('.docx')) {
@@ -1705,7 +1853,6 @@
       processNewFile(file);
     }
 
-    // ---- Khôi phục từ localStorage ----
     function restoreState() {
       if (loadFromLocalStorage() && songs.length > 0) {
         updateFileNameDisplay(currentFileName);
@@ -1733,7 +1880,8 @@
       if (e.dataTransfer.files[0]) handleFileSelect(e.dataTransfer.files[0]);
     });
 
-    // Song list events
+    zoomBtn.addEventListener('click', toggleFullscreen);
+
     songListToggle.addEventListener('click', toggleSongList);
     songListOverlay.addEventListener('click', closeSongList);
 
@@ -1741,10 +1889,17 @@
       renderSongList(this.value);
     });
 
-    // Đóng dropdown khi nhấn Escape
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && songListDropdown.classList.contains('show')) {
-        closeSongList();
+      if (e.key === 'Escape') {
+        if (songListDropdown.classList.contains('show')) {
+          closeSongList();
+        } else if (isFullscreen) {
+          toggleFullscreen();
+        }
+      }
+      if (e.key === 'f' && e.ctrlKey) {
+        e.preventDefault();
+        toggleFullscreen();
       }
     });
 
@@ -1762,7 +1917,6 @@
     prevBtn.addEventListener('click', onPrev);
     nextBtn.addEventListener('click', onNext);
 
-    // ---- Phím tắt ----
     window.addEventListener('keydown', (e) => {
       if (e.ctrlKey && e.key === 'o') { e.preventDefault(); fileInput.click(); }
       if (e.ctrlKey && e.key === 's' && !isEditing) { e.preventDefault(); downloadDocxFile(); }
@@ -1775,12 +1929,10 @@
       }
     });
 
-    // ---- Lưu trước khi thoát ----
     window.addEventListener('beforeunload', () => {
       if (songs.length > 0 && !isEditing) saveToLocalStorage();
     });
 
-    // ---- Khởi tạo ----
     restoreState();
     
   })();
