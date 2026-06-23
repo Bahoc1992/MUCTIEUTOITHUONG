@@ -813,7 +813,7 @@
       padding: 0;
     }
 
-    /* Mobile-specific styles */
+    /* ===== MOBILE: GIẢM FONT NỘI DUNG 2 SIZE ===== */
     @media (max-width: 600px) {
       .app-container {
         border-radius: 30px;
@@ -887,10 +887,29 @@
         border-top: 2px solid #e7cfaa;
       }
 
+      /* === GIẢM FONT NỘI DUNG 2 SIZE TRÊN MOBILE === */
       .song-page {
-        font-size: 1.05rem;
-        line-height: 1.7;
+        font-size: 0.9rem;  /* Giảm từ ~1.1rem xuống 0.9rem */
+        line-height: 1.6;    /* Giảm line-height tương ứng */
         padding: 6px 8px;
+      }
+
+      /* Giữ nguyên font tiêu đề */
+      .song-page .song-title {
+        font-size: 1.3rem;  /* Giữ nguyên kích thước tiêu đề */
+        line-height: 1.5;
+      }
+
+      /* Giảm font nội dung */
+      .song-page .song-content {
+        font-size: 0.9rem;  /* Giảm 2 size */
+        line-height: 1.6;
+      }
+
+      /* Giảm font textarea */
+      .song-page textarea {
+        font-size: 0.85rem;  /* Giảm 2 size */
+        line-height: 1.6;
       }
 
       .btn-edit, .btn-save, .btn-download {
@@ -925,8 +944,22 @@
         min-height: 60vh;
         max-height: 80vh;
       }
+
+      /* Fullscreen trên mobile vẫn giảm font */
+      .book-wrapper.fullscreen-book .song-page {
+        font-size: 1rem;
+      }
+
+      .book-wrapper.fullscreen-book .song-page .song-title {
+        font-size: 1.4rem;
+      }
+
+      .book-wrapper.fullscreen-book .song-page .song-content {
+        font-size: 1rem;
+      }
     }
 
+    /* === RẤT NHỎ: GIẢM THÊM === */
     @media (max-width: 380px) {
       .upload-area {
         flex-direction: column;
@@ -949,7 +982,23 @@
         min-height: 300px;
       }
 
+      /* Giảm thêm font cho màn hình rất nhỏ */
+      .song-page {
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
+      .song-page .song-title {
+        font-size: 1.2rem;
+      }
+
+      .song-page .song-content {
+        font-size: 0.82rem;
+        line-height: 1.5;
+      }
+
       .song-page textarea {
+        font-size: 0.78rem;
         min-height: 250px;
       }
 
@@ -1078,7 +1127,6 @@
       isFullscreen = !isFullscreen;
       
       if (isFullscreen) {
-        // Phóng to khung sách
         bookWrapper.classList.add('fullscreen-book');
         appContainer.classList.add('fullscreen-mode');
         zoomBtn.innerHTML = '✕';
@@ -1091,7 +1139,6 @@
         
         showToast('📖 Đã phóng to - Nhấn ✕ để thu nhỏ');
       } else {
-        // Thu nhỏ
         bookWrapper.classList.remove('fullscreen-book');
         appContainer.classList.remove('fullscreen-mode');
         zoomBtn.innerHTML = '⛶';
